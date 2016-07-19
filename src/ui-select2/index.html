@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ui-select2</title>
+    <link rel="stylesheet" href="../vender/select2/select2.css">
+</head>
+<body ng-controller="myController">
+
+<div>
+    <select ui-select2 ng-model="selectedOne" placeholder="请选择电影">
+        <option value=""></option>
+        <option value="0" code="zghhr">中国合伙人</option>
+        <option value="1" code="fczlm">复仇者联盟</option>
+        <option value="2" code="gtx3">钢铁侠3</option>
+    </select>
+</div>
+<script src="../vender/jquery.js"></script>
+<script src="../vender/select2/select2.js"></script>
+<script src="../vender/angular.js"></script>
+<script src="../vender/angular-ui.js"></script>
+
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../vender/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+</head>
+<body ng-app="myApp" style="background:#4A4A4A" class="row">
+<div style="color:#fff; font-size:30px; font-weight:bold; text-shadow:3px 3px 3px #ccc;-webkit-text-shadow:3px 3px 3px #ccc; text-align:center; margin-top:30px;">
+    FE-演示平台
+</div>
+<section ng-controller="html5Demo" class="col-md-6" style="margin:50px auto; float:none">
+    <p>
+        <button class="btn btn-dufault btn-sm" ng-click="status.open = !stasus.open" style="margin-right:8px;">打开最后一个
+        </button>
+        <button class="btn btn-sm" ng-click="status.isDisabled = !status.isDisabled">禁止第一个</button>
+    </p>
+    <label class="checkbox" style="color:#fff; padding-left:20px;">
+        <input type="checkbox" ng-model="oneAtATime">
+    </label>
+    <accordion close-others="oneAtATime">
+        <accordion-group heading="www.html5jq.com---angular手风琴" is-open="status.FirstOpen"
+                         is-disabled="status.isDisabled">
+        </accordion-group>
+        <accordion-group heading="{{group.title}}" ng-repeat="group in groups"> //ng-repeat 循环 。
+            {{group.content}}
+        </accordion-group>
+        <accordion-group heading="html5jq FE国内最好的学习平台">
+            <p>这里有最新的资源及实例</p>
+            <button class="btn btn-default btn-sm" ng-click="addItem()">点击添加</button>
+            <section ng-repeat="item in items">
+                {{item}}
+            </section>
+        </accordion-group>
+        <accordion-group is-open="status.open">
+            <accordion-heading>
+                欢迎提出bug及建议已便于我们改进！<i class="pull-right glyphicon"
+                                     ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            </accordion-heading>
+            thanks
+        </accordion-group>
+    </accordion>
+</section>
+<script src="../vender/angular.js"></script>
+<script src="../vender/ui-bootstrap-tpls.js"></script>
+</body>
+</html>
